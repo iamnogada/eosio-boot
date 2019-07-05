@@ -39,7 +39,7 @@ EOSIO_PASSWORD=`cat $PASSWORD_FILE`
 echo "password is $EOSIO_PASSWORD"
 
 echo "Create genesis key"
-GENESIS_KEY_FILE=$SECRET_DIR"/main.key"
+GENESIS_KEY_FILE=$SECRET_DIR"/eosio.key"
 
 genKey $GENESIS_KEY_FILE
 genKey $SECRET_DIR"/acc1.key"
