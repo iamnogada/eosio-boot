@@ -1,5 +1,5 @@
 #!/bin/bash
-SECRET_DIR=\"./secret\"
+SECRET_DIR="./secret"
 
 if [ ! -d $SECRET_DIR ]; then
   mkdir -p $SECRET_DIR;
