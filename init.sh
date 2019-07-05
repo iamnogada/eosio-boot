@@ -7,24 +7,24 @@ fi
 case $1 in
   eosio)
     ROLE=$1
-    HTTP=127.0.0.1:8888
-    P2P_LISTEN=127.0.0.1:9010
-    PEER1=127.0.0.1:9011
-    PEER2=127.0.0.1:9012
+    HTTP=0.0.0.0:8888
+    P2P_LISTEN=0.0.0.0:9010
+    PEER1=0.0.0.0:9011
+    PEER2=0.0.0.0:9012
     ;;
   acc1)
     ROLE=$1
-    HTTP=127.0.0.1:8801
-    P2P_LISTEN=127.0.0.1:9011
-    PEER1=127.0.0.1:9010
-    PEER2=127.0.0.1:9012
+    HTTP=0.0.0.0:8801
+    P2P_LISTEN=0.0.0.0:9011
+    PEER1=0.0.0.0:9010
+    PEER2=0.0.0.0:9012
     ;;
   acc2)
     ROLE=$1
-    HTTP=127.0.0.1:8802
-    P2P_LISTEN=127.0.0.1:9012
-    PEER1=127.0.0.1:9010
-    PEER2=127.0.0.1:9011
+    HTTP=0.0.0.0:8802
+    P2P_LISTEN=0.0.0.0:9012
+    PEER1=0.0.0.0:9010
+    PEER2=0.0.0.0:9011
     ;;
   *)
     echo "must pass arg : eosio, acc1, acc2"
@@ -64,6 +64,7 @@ nodeos \
 --blocks-dir $DATADIR"/blocks" \
 --config-dir $DATADIR"/config" \
 --producer-name $ROLE \
+--http-validate-host false \
 --http-server-address $HTTP \
 --p2p-listen-endpoint $P2P_LISTEN \
 --access-control-allow-origin=* \
