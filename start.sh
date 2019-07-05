@@ -44,7 +44,6 @@ PUBLIC_KEY=`awk '/Public/{print $3}' $KEY_FILE`
 
 
 nodeos \
---genesis-json "./genesis.json" \
 --signature-provider $PUBLIC_KEY=KEY:$PRIVATE_KEY \
 --plugin eosio::producer_plugin \
 --plugin eosio::chain_api_plugin \
