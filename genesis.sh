@@ -4,16 +4,16 @@ SECRET_DIR="./secret"
 if [ ! -d $SECRET_DIR ]; then
   mkdir -p $SECRET_DIR;
 fi
-PASSWORD_FILE=$SECRET_DIR\"/pin\"
+PASSWORD_FILE=$SECRET_DIR"/pin"
 echo "Creating default wallet's password"
 
 cleos wallet create -f $PASSWORD_FILE
 EOSIO_PASSWORD=`cat $PASSWORD_FILE`
 
-echo \"password is $EOSIO_PASSWORD\"
+echo "password is $EOSIO_PASSWORD"
 
-echo \"Create genesis key\"
-GENESIS_KEY_FILE=$SECRET_DIR\"/main.key\"
+echo "Create genesis key"
+GENESIS_KEY_FILE=$SECRET_DIR"/main.key"
 cleos wallet unlock --password $EOSIO_PASSWORD
 cleos create key -f $GENESIS_KEY_FILE
 
