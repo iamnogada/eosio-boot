@@ -17,13 +17,12 @@ GENESIS_KEY_FILE=$SECRET_DIR"/main.key"
 cleos wallet unlock --password $EOSIO_PASSWORD
 cleos create key -f $GENESIS_KEY_FILE
 
-GENESIS_PRIVATE_KEY= `awk '/Private/{print $3}' $GENESIS_KEY_FILE`
-GENESIS_PUBLIC = `awk '/Public/{print $3}' $GENESIS_KEY_FILE`
+GENESIS_PUBLIC_KEY=`awk '/Public/{print $3}' $GENESIS_KEY_FILE`
 
 cat << EOF > genesis.json
 {
     "initial_timestamp": "2018-12-05T08:55:11.000",
-    "initial_key": "$GENESIS_PUBLIC",
+    "initial_key": "$GENESIS_PUBLIC_KEY",
     "initial_configuration": {
       "max_block_net_usage": 1048576,
       "target_block_net_usage_pct": 1000,
