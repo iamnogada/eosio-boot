@@ -64,7 +64,6 @@ nodeos \
 --blocks-dir $DATADIR"/blocks" \
 --config-dir $DATADIR"/config" \
 --producer-name $ROLE \
---http-validate-host false \
 --http-server-address $HTTP \
 --p2p-listen-endpoint $P2P_LISTEN \
 --access-control-allow-origin=* \

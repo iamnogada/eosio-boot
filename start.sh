@@ -70,7 +70,6 @@ nodeos \
 --p2p-listen-endpoint $P2P_LISTEN \
 --access-control-allow-origin=* \
 --contracts-console \
---http-validate-host=false \
 --verbose-http-errors \
 --enable-stale-production \
 --p2p-peer-address $PEER1 \
