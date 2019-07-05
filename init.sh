@@ -19,12 +19,10 @@ case $1 in
     exit 1
 esac
 
-echo $ROLE
-
 DATADIR="./$ROLE"
 SECRET_DIR="./secret"
 KEY_FILE=$SECRET_DIR"/$ROLE.key"
-LOG_DIR=$DATADIR"/log"
+LOG_DIR="./log"
 LOG_FILE=$LOG_DIR"/$ROLE.log"
 
 if [ ! -d $DATADIR ]; then
@@ -41,7 +39,6 @@ fi
 
 PRIVATE_KEY=`awk '/Private/{print $3}' $KEY_FILE`
 PUBLIC_KEY=`awk '/Public/{print $3}' $KEY_FILE`
-
 
 nodeos \
 --genesis-json "./genesis.json" \

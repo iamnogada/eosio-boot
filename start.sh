@@ -24,8 +24,7 @@ echo $ROLE
 DATADIR="./$ROLE"
 SECRET_DIR="./secret"
 KEY_FILE=$SECRET_DIR"/$ROLE.key"
-LOG_DIR=$DATADIR"/log"
-LOG_FILE=$LOG_DIR"/$ROLE.log"
+LOG_DIR="./log"
 
 if [ ! -d $DATADIR ]; then
   mkdir -p $DATADIR;

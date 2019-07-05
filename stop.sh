@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ $# -lt 1 ];then
   echo "must pass arg : main, acc1, acc2"
   exit 1
@@ -21,7 +23,6 @@ esac
 echo $ROLE
 
 DATADIR="./$ROLE"
-LOG_DIR=$DATADIR"/log"
 
 if [ -f $DATADIR"/$ROLE.pid" ]; then
 pid=`cat $DATADIR"/$ROLE.pid"`
