@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -lt 1 ];then
-  echo "must pass arg : main, acc1, acc2"
+  echo "must pass arg : eosio, acc1, acc2"
   exit 1
 fi
 
@@ -16,7 +16,7 @@ case $1 in
     ROLE=$1
     ;;
   *)
-    echo "must pass arg : main, acc1, acc2"
+    echo "must pass arg : eosio, acc1, acc2"
     exit 1
 esac
 
