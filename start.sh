@@ -7,7 +7,7 @@ fi
 case $1 in
   eosio)
     ROLE=$1
-    HTTP=0.0.0.0:8800
+    HTTP=0.0.0.0:8888
     P2P_LISTEN=0.0.0.0:9010
     PEER1=0.0.0.0:9011
     PEER2=0.0.0.0:9012
