@@ -6,7 +6,7 @@ if [ $# -lt 1 ];then
 fi
 
 case $1 in
-  main)
+  eosio)
     ROLE=$1
     ;;
   acc1)
