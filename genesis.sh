@@ -1,4 +1,17 @@
 #!/bin/bash
+
+function genKey(){
+  ACC_KEY_FILE=$1
+  cleos create key -f $ACC_KEY_FILE
+
+
+  ACC_PRIVATE_KEY=`awk '/Private/{print $3}' $ACC_KEY_FILE`
+  ACC_PUBLIC_KEY=`awk '/Public/{print $3}' $ACC_KEY_FILE`
+
+  cleos wallet import --private-key $ACC_PRIVATE_KEY
+}
+
+
 SECRET_DIR="./secret"
 
 if [ ! -d $SECRET_DIR ]; then
@@ -14,8 +27,10 @@ echo "password is $EOSIO_PASSWORD"
 
 echo "Create genesis key"
 GENESIS_KEY_FILE=$SECRET_DIR"/main.key"
-cleos wallet unlock --password $EOSIO_PASSWORD
-cleos create key -f $GENESIS_KEY_FILE
+
+genKey $GENESIS_KEY_FILE
+genKey $SECRET_DIR"/acc1.key"
+genKey $SECRET_DIR"/acc2.key"
 
 GENESIS_PUBLIC_KEY=`awk '/Public/{print $3}' $GENESIS_KEY_FILE`
 
@@ -45,3 +60,6 @@ cat << EOF > genesis.json
     "initial_chain_id": "0000000000000000000000000000000000000000000000000000000000000000"
   }
 EOF
+
+
+
