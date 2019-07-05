@@ -1,11 +1,11 @@
 #!/bin/bash
 if [ $# -lt 1 ];then
-  echo "must pass arg : main, acc1, acc2"
+  echo "must pass arg : eosio, acc1, acc2"
   exit 1
 fi
 
 case $1 in
-  main)
+  eosio)
     ROLE=$1
     ;;
   acc1)
@@ -51,7 +51,7 @@ nodeos \
 --data-dir $DATADIR"/data" \
 --blocks-dir $DATADIR"/blocks" \
 --config-dir $DATADIR"/config" \
---producer-name eosio \
+--producer-name $ROLE \
 --http-server-address 127.0.0.1:8888 \
 --p2p-listen-endpoint 127.0.0.1:9010 \
 --access-control-allow-origin=* \
