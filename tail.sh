@@ -9,10 +9,10 @@ case $1 in
     ROLE=$1
     ;;
   acc1)
-    ROLE="bproducer001"
+    ROLE="bproducer111"
     ;;
   acc2)
-    ROLE="bproducer002"
+    ROLE="bproducer222"
     ;;
   *)
     echo "must pass arg : eosio, acc1, acc2"

@@ -13,14 +13,14 @@ case $1 in
     PEER2=0.0.0.0:9012
     ;;
   acc1)
-    ROLE="bproducer001"
+    ROLE="bproducer111"
     HTTP=0.0.0.0:8801
     P2P_LISTEN=0.0.0.0:9011
     PEER1=0.0.0.0:9010
     PEER2=0.0.0.0:9012
     ;;
   acc2)
-    ROLE="bproducer002"
+    ROLE="bproducer222"
     HTTP=0.0.0.0:8802
     P2P_LISTEN=0.0.0.0:9012
     PEER1=0.0.0.0:9010
