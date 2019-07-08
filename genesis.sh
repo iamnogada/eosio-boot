@@ -42,8 +42,8 @@ echo "Create genesis key"
 GENESIS_KEY_FILE=$SECRET_DIR"/eosio.key"
 
 genKey $GENESIS_KEY_FILE
-genKey $SECRET_DIR"/acc1.key"
-genKey $SECRET_DIR"/acc2.key"
+genKey $SECRET_DIR"/bproducer001.key"
+genKey $SECRET_DIR"/bproducer002.key"
 
 GENESIS_PUBLIC_KEY=`awk '/Public/{print $3}' $GENESIS_KEY_FILE`
 
