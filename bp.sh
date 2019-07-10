@@ -36,4 +36,3 @@ $PUBLIC_KEY \
 cleos system regproducer $ROLE \
 $PUBLIC_KEY \
 https://accountnum11.com \
-$PUBLIC_KEY
