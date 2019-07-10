@@ -32,3 +32,8 @@ $PUBLIC_KEY \
 --stake-net "100000.0000 SYS" \
 --stake-cpu "100000.0000 SYS" \
 --buy-ram-kbytes 8192
+
+cleos system regproducer $ROLE \
+$PUBLIC_KEY \
+https://accountnum11.com \
+$PUBLIC_KEY
