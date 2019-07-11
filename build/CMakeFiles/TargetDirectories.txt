@@ -1,4 +1,0 @@
-/Users/nogada/workspace/ecotyme/phase-2nd/eosio.contracts/build/CMakeFiles/rebuild_cache.dir
-/Users/nogada/workspace/ecotyme/phase-2nd/eosio.contracts/build/CMakeFiles/edit_cache.dir
-/Users/nogada/workspace/ecotyme/phase-2nd/eosio.contracts/build/CMakeFiles/contracts_unit_tests.dir
-/Users/nogada/workspace/ecotyme/phase-2nd/eosio.contracts/build/CMakeFiles/contracts_project.dir
