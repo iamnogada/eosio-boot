@@ -40,6 +40,7 @@ keosd \
 echo $! >$PID_DIR"/$APP.pid"
 
 echo 'keosd started' $(cat $PID_DIR/$APP.pid)
+ps -ef | grep keosd
 
 
 
