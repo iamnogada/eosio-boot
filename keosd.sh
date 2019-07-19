@@ -33,7 +33,7 @@ checkdir $WALLET_DIR
 checkdir $LOG_DIR
 
 keosd \
-  --http-server-address 0.0.0.0:8888 \
+  --http-server-address 0.0.0.0:9900 \
   --wallet-dir $WALLET_DIR \
   --http-validate-host false \
   >>$LOG_DIR"/$APP.log" 2>&1 &
