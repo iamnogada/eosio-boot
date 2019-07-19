@@ -12,7 +12,7 @@ function genKey(){
 }
 
 ROLE="keosd"
-LOG_DIR="./log"
+LOG_DIR="./nodes/log"
 
 if [ ! -d $LOG_DIR ]; then
   mkdir -p $LOG_DIR;
@@ -25,7 +25,7 @@ echo $! >"./$ROLE.pid"
 
 
 
-SECRET_DIR="./secret"
+SECRET_DIR="./nodes"
 
 if [ ! -d $SECRET_DIR ]; then
   mkdir -p $SECRET_DIR;
@@ -42,12 +42,12 @@ echo "Create genesis key"
 GENESIS_KEY_FILE=$SECRET_DIR"/eosio.key"
 
 genKey $GENESIS_KEY_FILE
-genKey $SECRET_DIR"/bproducer111.key"
-genKey $SECRET_DIR"/bproducer222.key"
+genKey $SECRET_DIR"/accountnum11.key"
+genKey $SECRET_DIR"/accountnum22.key"
 
 GENESIS_PUBLIC_KEY=`awk '/Public/{print $3}' $GENESIS_KEY_FILE`
 
-cat << EOF > genesis.json
+cat << EOF > ./nodes/genesis.json
 {
     "initial_timestamp": "2018-12-05T08:55:11.000",
     "initial_key": "$GENESIS_PUBLIC_KEY",

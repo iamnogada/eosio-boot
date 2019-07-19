@@ -13,14 +13,14 @@ case $1 in
     PEER2=0.0.0.0:9012
     ;;
   acc1)
-    ROLE="bproducer111"
+    ROLE="accountnum11"
     HTTP=0.0.0.0:8801
     P2P_LISTEN=0.0.0.0:9011
     PEER1=0.0.0.0:9010
     PEER2=0.0.0.0:9012
     ;;
   acc2)
-    ROLE="bproducer222"
+    ROLE="accountnum22"
     HTTP=0.0.0.0:8802
     P2P_LISTEN=0.0.0.0:9012
     PEER1=0.0.0.0:9010
@@ -31,11 +31,12 @@ case $1 in
     exit 1
 esac
 
-DATADIR="./$ROLE"
-SECRET_DIR="./secret"
+echo $ROLE
+
+DATADIR="./nodes/"$ROLE
+SECRET_DIR="./nodes"
 KEY_FILE=$SECRET_DIR"/$ROLE.key"
-LOG_DIR="./log"
-LOG_FILE=$LOG_DIR"/$ROLE.log"
+LOG_DIR="./nodes/log"
 
 if [ ! -d $DATADIR ]; then
   mkdir -p $DATADIR;
@@ -52,8 +53,8 @@ fi
 PRIVATE_KEY=`awk '/Private/{print $3}' $KEY_FILE`
 PUBLIC_KEY=`awk '/Public/{print $3}' $KEY_FILE`
 
+
 nodeos \
---genesis-json "./genesis.json" \
 --signature-provider $PUBLIC_KEY=KEY:$PRIVATE_KEY \
 --plugin eosio::producer_plugin \
 --plugin eosio::chain_api_plugin \
@@ -64,11 +65,11 @@ nodeos \
 --blocks-dir $DATADIR"/blocks" \
 --config-dir $DATADIR"/config" \
 --producer-name $ROLE \
+--http-validate-host false \
 --http-server-address $HTTP \
 --p2p-listen-endpoint $P2P_LISTEN \
 --access-control-allow-origin=* \
 --contracts-console \
---http-validate-host=false \
 --verbose-http-errors \
 --enable-stale-production \
 --p2p-peer-address $PEER1 \
