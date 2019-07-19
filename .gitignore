@@ -6,6 +6,6 @@ secret
 log
 genesis.json
 nodes
-pid/*
+nodes
 
 

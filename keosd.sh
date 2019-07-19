@@ -1,11 +1,11 @@
 #!/bin/bash
 
-pushd ..
+ROOT="./nodes"
+PID_DIR="$ROOT/pid"
+WALLET_DIR="$ROOT/wallet"
+LOG_DIR="$ROOT/log"
 
 APP="keosd"
-PID_DIR="./pid"
-WALLET_DIR=$(pwd)"/wallet"
-LOG_DIR="./log"
 
 function checkdir() {
   if [ ! -d $1 ]; then
@@ -23,7 +23,7 @@ if [ -f "$PID_DIR/$APP.pid" ]; then
     [ ! -d "/proc/$pid/fd" ] && break
     echo -ne "."
     sleep 1
-    rm -r $DATADIR"/$ROLE.pid"
+    rm -r $PID_DIR"/$ROLE.pid"
   done
   echo -ne "\n$APP Stopped. \n"
 fi
@@ -41,5 +41,5 @@ echo $! >$PID_DIR"/$APP.pid"
 
 echo 'keosd started' $(cat $PID_DIR/$APP.pid)
 
-popd
+
 

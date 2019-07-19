@@ -1,6 +1,5 @@
 #!/bin/bash
 
-pushd ..
 
 function genKey(){
   ACC_KEY_FILE=$1
@@ -17,15 +16,20 @@ function checkdir() {
     mkdir -p $1
   fi
 }
-
-SECRET_DIR="./secret"
+ROOT="./nodes"
+checkdir $ROOT
+SECRET_DIR="$ROOT/secret"
 checkdir $SECRET_DIR
 GENESIS_KEY_FILE="$SECRET_DIR/eosio.key"
 
 genKey $GENESIS_KEY_FILE
+genKey "$SECRET_DIR/accountnum11.key"
+genKey "$SECRET_DIR/accountnum22.key"
+genKey "$SECRET_DIR/accountnum33.key"
+
 GENESIS_PUBLIC_KEY=`awk '/Public/{print $3}' $GENESIS_KEY_FILE`
 
-cat << EOF > genesis.json
+cat << EOF > $ROOT/genesis.json
 {
     "initial_timestamp": "2018-12-05T08:55:11.000",
     "initial_key": "$GENESIS_PUBLIC_KEY",
@@ -51,6 +55,3 @@ cat << EOF > genesis.json
     "initial_chain_id": "0000000000000000000000000000000000000000000000000000000000000000"
   }
 EOF
-
-popd
-
