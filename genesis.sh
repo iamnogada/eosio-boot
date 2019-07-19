@@ -21,6 +21,7 @@ function checkdir() {
 SECRET_DIR="./secret"
 checkdir $SECRET_DIR
 GENESIS_KEY_FILE="$SECRET_DIR/eosio.key"
+
 genKey $GENESIS_KEY_FILE
 GENESIS_PUBLIC_KEY=`awk '/Public/{print $3}' $GENESIS_KEY_FILE`
 
