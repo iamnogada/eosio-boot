@@ -11,7 +11,7 @@ case $1 in
     P2P_LISTEN=0.0.0.0:9010
     PEER1=0.0.0.0:9011
     PEER2=0.0.0.0:9012
-    PEER2=0.0.0.0:9013
+    PEER3=0.0.0.0:9013
     ;;
   acc1)
     ROLE="accountnum11"
@@ -19,7 +19,7 @@ case $1 in
     P2P_LISTEN=0.0.0.0:9011
     PEER1=0.0.0.0:9010
     PEER2=0.0.0.0:9012
-    PEER2=0.0.0.0:9013
+    PEER3=0.0.0.0:9013
     ;;
   acc2)
     ROLE="accountnum22"
@@ -27,7 +27,7 @@ case $1 in
     P2P_LISTEN=0.0.0.0:9012
     PEER1=0.0.0.0:9010
     PEER2=0.0.0.0:9011
-    PEER2=0.0.0.0:9013
+    PEER3=0.0.0.0:9013
     ;;
   acc3)
     ROLE="accountnum33"
@@ -35,7 +35,7 @@ case $1 in
     P2P_LISTEN=0.0.0.0:9013
     PEER1=0.0.0.0:9010
     PEER2=0.0.0.0:9011
-    PEER2=0.0.0.0:9012
+    PEER3=0.0.0.0:9012
     ;;
   *)
     echo "must pass arg : eosio, acc1, acc2"
