@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOT="./nodes"
+ROOT="$(pwd)/nodes"
 PID_DIR="$ROOT/pid"
 WALLET_DIR="$ROOT/wallet"
 LOG_DIR="$ROOT/log"
