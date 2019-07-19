@@ -7,7 +7,7 @@ PID_DIR="./pid"
 WALLET_DIR=$(pwd)"/wallet"
 LOG_DIR="./log"
 
-checkdir() {
+function checkdir() {
   if [ ! -d $1 ]; then
     mkdir -p $1
   fi
