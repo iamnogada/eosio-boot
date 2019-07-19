@@ -4,7 +4,7 @@ pushd ..
 
 APP="keosd"
 PID_DIR="./pid"
-WALLET_DIR="./wallet"
+WALLET_DIR=$(pwd)"/wallet"
 LOG_DIR="./log"
 
 checkdir() {
