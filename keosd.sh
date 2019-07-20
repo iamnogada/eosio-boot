@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ROOT="$(pwd)"
-PID_DIR="$ROOT/pid"
 WALLET_DIR="$ROOT/wallet"
-LOG_DIR="$ROOT/log"
+PID_DIR="$WALLET_DIR"
+LOG_DIR="$WALLET_DIR"
 
 APP="keosd"
 
