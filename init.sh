@@ -58,6 +58,8 @@ PID_DIR="$ROOT/pid"
 
 checkdir $DATADIR
 checkdir $LOG_DIR
+checkdir $PID_DIR
+
 
 KEY_FILE=$SECRET_DIR"/$ROLE.key"
 if [ ! -f "$KEY_FILE" ]; then
