@@ -31,7 +31,7 @@ case $1 in
     ;;
   acc3)
     ROLE="accountnum33"
-    HTTP=0.0.0.0:8802
+    HTTP=0.0.0.0:8803
     P2P_LISTEN=0.0.0.0:9013
     PEER1=0.0.0.0:9010
     PEER2=0.0.0.0:9011
