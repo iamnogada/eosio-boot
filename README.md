@@ -81,3 +81,20 @@ info  2019-07-26T07:57:06.000 thread-0  producer_plugin.cpp:1597      produce_bl
 5. cleos set contract eosio $EOSIO_CONTRACTS_DIRECTORY/eosio.system/
 6. cleos push action eosio setpriv '["eosio.msig", 1]' -p eosio@active
 7. cleos push action eosio init '["0", "4,TYM"]' -p eosio@active
+
+
+## Step 07: Issue token to each account
+> cmd: ./issue.sh
+
+## Step 08: Promote eachnode to block producer
+> cleos system regproducer accountnum11 ${PUBLIC_KEY} http://account11.com
+> cleos system regproducer accountnum22 ${PUBLIC_KEY} http://account22.com
+> cleos system regproducer accountnum33 ${PUBLIC_KEY} http://account33.com
+> run all nodes and wait for sync all block
+
+## Step 09: Vote for all bp nodes
+> cleos system voteproducer prods accountnum11 accountnum11 accountnum22 accountnum33
+
+
+# Now you see bp nodes producing blocks
+
