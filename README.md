@@ -87,10 +87,10 @@ info  2019-07-26T07:57:06.000 thread-0  producer_plugin.cpp:1597      produce_bl
 > cmd: ./issue.sh
 
 ## Step 08: Promote eachnode to block producer
-> cleos system regproducer accountnum11 ${PUBLIC_KEY} http://account11.com
-> cleos system regproducer accountnum22 ${PUBLIC_KEY} http://account22.com
-> cleos system regproducer accountnum33 ${PUBLIC_KEY} http://account33.com
-> run all nodes and wait for sync all block
+* cleos system regproducer accountnum11 ${PUBLIC_KEY} http://account11.com
+* cleos system regproducer accountnum22 ${PUBLIC_KEY} http://account22.com
+* cleos system regproducer accountnum33 ${PUBLIC_KEY} http://account33.com
+* run all nodes and wait for sync all block
 
 ## Step 09: Vote for all bp nodes
 > cleos system voteproducer prods accountnum11 accountnum11 accountnum22 accountnum33
