@@ -69,3 +69,15 @@ info  2019-07-26T07:57:06.000 thread-0  producer_plugin.cpp:1597      produce_bl
 * eosio.rex 
 
 > cmd : ./sysacc.sh
+
+## Step 06: Install contracts
+> 사전 준비 사항 : contract build
+> EOSIO_CONTRACTS_DIRECTORY = [contract build path]
+
+1. cleos set contract eosio.token $EOSIO_CONTRACTS_DIRECTORY/eosio.token/
+2. cleos set contract eosio.msig $EOSIO_CONTRACTS_DIRECTORY/eosio.msig/
+3. cleos push action eosio.token create '[ "eosio", "10000000000.0000 TYM" ]' -p eosio.token@active
+4. cleos push action eosio.token issue '[ "eosio", "1000000000.0000 TYM", "memo" ]' -p eosio@active
+5. cleos set contract eosio $EOSIO_CONTRACTS_DIRECTORY/eosio.system/
+6. cleos push action eosio setpriv '["eosio.msig", 1]' -p eosio@active
+7. cleos push action eosio init '["0", "4,TYM"]' -p eosio@active
